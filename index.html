@@ -2049,7 +2049,7 @@ h1 span{color:var(--navy)}
       position: absolute;
       top: 50%;
       right: -24px;
-      transform: translateY(-50%);
+      /* transform: translateY(-50%);
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -2060,7 +2060,7 @@ h1 span{color:var(--navy)}
       gap: 4px;
       box-shadow: 0 12px 36px rgba(15, 23, 42, .12);
       z-index: 30;
-      animation: whBob 5s 1s ease-in-out infinite;
+      animation: whBob 5s 1s ease-in-out infinite; */
     }
 
     .wh-ring {
@@ -10541,6 +10541,352 @@ h1 span{color:var(--navy)}
         font-size: 13px
       }
     }
+    /* ══════════════════════════════════════════
+   FAQ SECTION — matches your hero theme
+══════════════════════════════════════════ */
+#wvh-faq {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle top border gradient */
+#wvh-faq::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #dce6f4 20%,
+    #4A8FD4 50%,
+    #dce6f4 80%,
+    transparent 100%);
+}
+
+/* ── Inner container ── */
+#wvh-faq .faq-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ══════════════════════════════════════════
+   LEFT — sticky label column
+══════════════════════════════════════════ */
+#wvh-faq .faq-left {
+  position: sticky;
+  top: 40px;
+}
+
+#wvh-faq .faq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 10px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 100px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+#wvh-faq .faq-eyebrow-dash {
+  display: block;
+  width: 14px; height: 1.5px;
+  background: #94a3b8;
+  border-radius: 2px;
+}
+#wvh-faq .faq-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #4A8FD4;
+  box-shadow: 0 0 6px rgba(74,143,212,.6);
+}
+#wvh-faq .faq-eyebrow-txt {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+#wvh-faq .faq-heading {
+  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -.06em;
+  line-height: 1.02;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+#wvh-faq .faq-heading span {
+  display: block;
+  font-weight: 300;
+  font-style: italic;
+  color: #64748b;
+  letter-spacing: -.05em;
+}
+
+#wvh-faq .faq-sub {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+/* CTA block inside left */
+#wvh-faq .faq-cta-block {
+  background: linear-gradient(135deg, #07111f 0%, #1B3F6E 100%);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+#wvh-faq .faq-cta-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+#wvh-faq .faq-cta-block::after {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,143,212,.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+#wvh-faq .faq-cta-ico {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(74,143,212,.2);
+  border: 1px solid rgba(74,143,212,.3);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+#wvh-faq .faq-cta-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+#wvh-faq .faq-cta-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+#wvh-faq .faq-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #4A8FD4;
+  border: none;
+  border-radius: 9px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: background .18s, transform .18s;
+}
+#wvh-faq .faq-cta-btn:hover {
+  background: #2C5F9E;
+  transform: translateY(-1px);
+}
+
+/* ══════════════════════════════════════════
+   RIGHT — accordion list
+══════════════════════════════════════════ */
+#wvh-faq .faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* category label */
+#wvh-faq .faq-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  padding: 28px 0 12px;
+  border-top: 1px solid #f1f5f9;
+}
+#wvh-faq .faq-category:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+#wvh-faq .faq-category-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* accordion item */
+#wvh-faq .faq-item {
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+}
+
+#wvh-faq .faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#wvh-faq .faq-q-text {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.45;
+  transition: color .2s;
+  flex: 1;
+}
+
+#wvh-faq .faq-item.open .faq-q-text {
+  color: #1B3F6E;
+}
+
+/* chevron icon */
+#wvh-faq .faq-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  display: grid;
+  place-items: center;
+  transition: background .22s, border-color .22s, transform .22s;
+}
+#wvh-faq .faq-icon svg {
+  transition: transform .28s cubic-bezier(.16,1,.3,1);
+}
+#wvh-faq .faq-item.open .faq-icon {
+  background: #1B3F6E;
+  border-color: #1B3F6E;
+}
+#wvh-faq .faq-item.open .faq-icon svg {
+  transform: rotate(45deg);
+}
+#wvh-faq .faq-item.open .faq-icon svg path {
+  stroke: #fff;
+}
+
+/* answer panel */
+#wvh-faq .faq-a-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .32s cubic-bezier(.16,1,.3,1);
+}
+#wvh-faq .faq-item.open .faq-a-wrap {
+  grid-template-rows: 1fr;
+}
+#wvh-faq .faq-a-inner {
+  overflow: hidden;
+}
+#wvh-faq .faq-a {
+  font-size: 13.5px;
+  line-height: 1.78;
+  color: #64748b;
+  padding-bottom: 20px;
+  padding-right: 44px;
+}
+#wvh-faq .faq-a strong {
+  color: #334155;
+  font-weight: 600;
+}
+#wvh-faq .faq-a a {
+  color: #4A8FD4;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(74,143,212,.25);
+  transition: border-color .18s;
+}
+#wvh-faq .faq-a a:hover {
+  border-color: #4A8FD4;
+}
+
+/* highlight tag inside answer */
+#wvh-faq .faq-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: #EEF4FC;
+  color: #2563eb;
+  border: 1px solid #dce6f4;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+
+/* ── Left accent bar on open item ── */
+#wvh-faq .faq-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #1B3F6E, #4A8FD4);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .28s cubic-bezier(.16,1,.3,1);
+}
+#wvh-faq .faq-item.open::before {
+  transform: scaleY(1);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  #wvh-faq .faq-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 32px;
+  }
+  #wvh-faq .faq-left {
+    position: static;
+  }
+  #wvh-faq .faq-cta-block {
+    max-width: 420px;
+  }
+}
+@media (max-width: 600px) {
+  #wvh-faq .faq-inner { padding: 48px 20px; }
+  #wvh-faq .faq-heading { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+  #wvh-faq .faq-a { padding-right: 0; }
+  #wvh-faq .faq-item::before { display: none; }
+}
   </style>
 </head>
 
@@ -10573,8 +10919,8 @@ h1 span{color:var(--navy)}
       <div class="wbp-nav-links">
         <a href="index.html">Home</a>
         <a href="case-study.html" class="">Case Studies</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <!-- <a href="about.html">About</a> -->
       </div>
 
       <!-- Right actions -->
@@ -12647,119 +12993,6 @@ h1 span{color:var(--navy)}
         </div>
       </div>
     </div>
-
-    <!-- MARQUEE -->
-    <div class="tm-marquee-wrap">
-      <div class="tm-marquee-track" id="tmTrack">
-        <!-- set A -->
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Training was done in a day. Our team was raising purchase orders independently by day
-            two."</div>
-          <div class="tm-mq-author">Deepak Joshi</div>
-          <div class="tm-mq-role">Purchase Manager · Orbis Infra</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Fixed fee meant no budget anxiety. We knew exactly what we were paying from day one."
-          </div>
-          <div class="tm-mq-author">Priya Nair</div>
-          <div class="tm-mq-role">MD · Helix Pharma</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"The 30-day hypercare period was genuinely useful — not just a tickbox. They were on
-            calls at 8pm if we needed it."</div>
-          <div class="tm-mq-author">Karthik S.</div>
-          <div class="tm-mq-role">CEO · Solaris Print</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Multi-company consolidation was something our last consultant said would take 6
-            months. Done in week 8."</div>
-          <div class="tm-mq-author">Ananya Sharma</div>
-          <div class="tm-mq-role">Group CFO · Apex Logistics</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"No custom code means our internal team can actually maintain it. That was the biggest
-            win."</div>
-          <div class="tm-mq-author">Rohit Verma</div>
-          <div class="tm-mq-role">CTO · TrueGrain Foods</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Approval workflows were set up exactly as our board mandated. Not a workaround — the
-            real thing."</div>
-          <div class="tm-mq-author">Meena Iyer</div>
-          <div class="tm-mq-role">VP Finance · Zenith Steel</div>
-        </div>
-        <!-- set B (duplicate for seamless loop) -->
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Training was done in a day. Our team was raising purchase orders independently by day
-            two."</div>
-          <div class="tm-mq-author">Deepak Joshi</div>
-          <div class="tm-mq-role">Purchase Manager · Orbis Infra</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Fixed fee meant no budget anxiety. We knew exactly what we were paying from day one."
-          </div>
-          <div class="tm-mq-author">Priya Nair</div>
-          <div class="tm-mq-role">MD · Helix Pharma</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"The 30-day hypercare period was genuinely useful — not just a tickbox. They were on
-            calls at 8pm if we needed it."</div>
-          <div class="tm-mq-author">Karthik S.</div>
-          <div class="tm-mq-role">CEO · Solaris Print</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Multi-company consolidation was something our last consultant said would take 6
-            months. Done in week 8."</div>
-          <div class="tm-mq-author">Ananya Sharma</div>
-          <div class="tm-mq-role">Group CFO · Apex Logistics</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"No custom code means our internal team can actually maintain it. That was the biggest
-            win."</div>
-          <div class="tm-mq-author">Rohit Verma</div>
-          <div class="tm-mq-role">CTO · TrueGrain Foods</div>
-        </div>
-        <div class="tm-mq-card">
-          <div class="tm-mq-stars"><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span
-              class="tm-mq-star">★</span><span class="tm-mq-star">★</span><span class="tm-mq-star">★</span></div>
-          <div class="tm-mq-text">"Approval workflows were set up exactly as our board mandated. Not a workaround — the
-            real thing."</div>
-          <div class="tm-mq-author">Meena Iyer</div>
-          <div class="tm-mq-role">VP Finance · Zenith Steel</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STATS BAR -->
-    <div class="tm-stats">
-      <div class="tm-stat"><strong><span>40+</span></strong><em>Successful go-lives</em></div>
-      <div class="tm-stat"><strong><span>4.9</span> / 5</strong><em>Average client rating</em></div>
-      <div class="tm-stat"><strong><span>100%</span></strong><em>On-time delivery rate</em></div>
-      <div class="tm-stat"><strong><span>0</span></strong><em>Lines of custom code</em></div>
-      <div class="tm-stat"><strong><span>30d</span></strong><em>Hypercare included</em></div>
-    </div>
   </section>
 
   <section class="cta">
@@ -12849,8 +13082,244 @@ h1 span{color:var(--navy)}
         </div>
       </a>
     </div>
-
   </section>
+
+  <section id="wvh-faq">
+  <div class="faq-inner">
+
+    <!-- ════ LEFT ════ -->
+    <div class="faq-left">
+
+      <div class="faq-eyebrow">
+        <span class="faq-eyebrow-dash"></span>
+        <span class="faq-eyebrow-dot"></span>
+        <span class="faq-eyebrow-txt">FAQ</span>
+      </div>
+
+      <h2 class="faq-heading">
+        Everything you<br>
+        <span>need to know.</span>
+      </h2>
+
+      <p class="faq-sub">
+        Common questions about our ERPNext implementation process,
+        pricing, timelines, and what happens after go-live.
+      </p>
+
+      <!-- CTA card -->
+      <div class="faq-cta-block">
+        <div class="faq-cta-ico">💬</div>
+        <div class="faq-cta-title">Still have questions?</div>
+        <div class="faq-cta-desc">
+          Book a free 30-min discovery call. We'll walk you through
+          exactly what ERPNext can do for your business.
+        </div>
+        <button class="faq-cta-btn">
+          Book free call
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M2 6h8M6 2l4 4-4 4"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ════ RIGHT — accordion ════ -->
+    <div class="faq-right" id="faqList">
+
+      <!-- ── Category 1 ── -->
+      <div class="faq-category">
+        <span class="faq-category-dot" style="background:#4A8FD4"></span>
+        Implementation
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">How long does a full ERPNext implementation take?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              Most implementations are complete in <strong>8–12 weeks</strong> from kickoff to go-live. The timeline depends on the number of modules and the complexity of your existing data. We provide a <strong>fixed project schedule</strong> before we start so you always know what's happening and when.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Do we need an in-house IT team to manage this?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              No. ERPNext is designed to be managed by business users after proper training. We handle the full setup, configuration, and training. Post go-live, your team can manage day-to-day operations independently — no developers needed.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">What happens during the implementation process?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              We follow a structured 4-phase process:
+              <span class="faq-tag">Discovery</span> understanding your business flows,
+              <span class="faq-tag">Configuration</span> setting up modules to match your processes,
+              <span class="faq-tag">Training</span> hands-on sessions for your team, and
+              <span class="faq-tag">Go-Live</span> launch with full support. No surprises.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Category 2 ── -->
+      <div class="faq-category">
+        <span class="faq-category-dot" style="background:#22c55e"></span>
+        Pricing & Scope
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Is the pricing really fixed-fee with no hidden costs?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              Yes. We agree on a fixed price before work begins — covering all configuration, data migration, training, and go-live support. There are <strong>no per-user fees, no module add-on charges, and no surprise invoices</strong>. ERPNext itself is open source, so you pay only for our implementation service.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Do you write custom code for our requirements?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              We implement <strong>zero custom code</strong>. Every feature we configure exists within standard ERPNext — this keeps your system upgrade-safe, maintainable, and free from technical debt. In our experience, 95% of business requirements are fully covered by standard modules when configured correctly.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Category 3 ── -->
+      <div class="faq-category">
+        <span class="faq-category-dot" style="background:#f59e0b"></span>
+        Data & Migration
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Can we migrate data from our existing system or Excel?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              Yes. We migrate <strong>customers, suppliers, items, opening balances, and historical transactions</strong> from Excel, Tally, or any existing ERP. Data is cleaned, validated, and imported before go-live so you start with accurate records from day one.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Is our data secure on ERPNext Cloud?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              Absolutely. ERPNext Cloud (Frappe Cloud) uses <strong>SSL encryption, daily backups, role-based access controls</strong>, and is hosted on AWS infrastructure. You own your data completely and can export it anytime. We also offer self-hosted AWS deployment for enterprises requiring full data sovereignty.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Category 4 ── -->
+      <div class="faq-category">
+        <span class="faq-category-dot" style="background:#a78bfa"></span>
+        After Go-Live
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">What support do we get after the system goes live?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              Every project includes a <strong>30-day hypercare period</strong> post go-live — dedicated support for any issues, questions, or minor adjustments. After that, we offer flexible AMC (Annual Maintenance Contract) packages covering system updates, user additions, and ongoing training.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Will ERPNext updates break our configuration?</span>
+          <span class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+              <path d="M6 1v10M1 6h10"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-a-wrap">
+          <div class="faq-a-inner">
+            <div class="faq-a">
+              No — this is precisely why we use <strong>zero custom code</strong>. Standard ERPNext configurations survive version updates cleanly. Frappe releases updates with backward compatibility, and your setup remains intact. We also test updates on a staging environment before applying to production.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /faq-right -->
+  </div><!-- /faq-inner -->
+</section>
 
   <!-- FOOTER -->
   <footer>
@@ -13767,6 +14236,7 @@ setInterval(()=>{
 },100);
 
 window.addEventListener('DOMContentLoaded',()=>goTo(0));
+
   </script>
 </body>
 
