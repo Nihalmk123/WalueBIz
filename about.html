@@ -482,287 +482,6 @@ body{padding-top:64px}
 }
 .wbm-header-right strong{color:#0f172a;font-weight:600}
 
-/* ══════════════════
-   BENTO GRID
-══════════════════ */
-.wbm-grid{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  grid-template-rows:auto;
-  gap:12px;
-}
-
-/* Base card */
-.wbm-card{
-  border-radius:22px;
-  border:1.5px solid #dce6f4;
-  background:#ffffff;
-  overflow:hidden;
-  position:relative;
-  transition:box-shadow .28s,transform .28s,border-color .28s;
-  cursor:default;
-}
-.wbm-card:hover{
-  box-shadow:0 14px 42px rgba(27,63,110,.1);
-  transform:translateY(-3px);
-  border-color:#b8cee8;
-}
-
-/* ── Card A — Big intro, spans 7 cols ── */
-.wbm-card-a{
-  grid-column:span 7;
-  grid-row:span 1;
-  background:linear-gradient(140deg,#1B3F6E 0%,#0c1e38 100%);
-  border-color:transparent;
-  padding:44px 44px 40px;
-  display:flex;flex-direction:column;
-  justify-content:space-between;
-  min-height:280px;
-}
-.wbm-card-a:hover{border-color:transparent;box-shadow:0 20px 52px rgba(27,63,110,.3)}
-.wbm-card-a-noise{
-  position:absolute;inset:0;pointer-events:none;opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:200px;
-}
-.wbm-card-a-glow{
-  position:absolute;top:-60px;right:-60px;
-  width:280px;height:280px;border-radius:50%;
-  background:radial-gradient(circle,rgba(74,143,212,.28) 0%,transparent 65%);
-  pointer-events:none;
-}
-.wbm-card-a-tag{
-  display:inline-flex;align-items:center;gap:7px;
-  font-size:10px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:rgba(147,197,253,.7);
-  margin-bottom:0;position:relative;z-index:1;
-}
-.wbm-card-a-tag-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:#22c55e;
-  animation:wbmPing 2s ease-in-out infinite;
-}
-@keyframes wbmPing{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
-.wbm-card-a-body{position:relative;z-index:1}
-.wbm-card-a-quote{
-  font-size:clamp(1.2rem,2vw,1.65rem);
-  font-weight:700;line-height:1.42;
-  color:rgba(255,255,255,.92);
-  letter-spacing:-.025em;
-  margin-bottom:22px;
-}
-.wbm-card-a-quote em{
-  font-style:italic;font-weight:300;
-  color:rgba(147,197,253,.75);
-}
-.wbm-card-a-author{
-  display:flex;align-items:center;gap:11px;
-}
-.wbm-card-a-avatar{
-  width:36px;height:36px;border-radius:50%;
-  background:linear-gradient(135deg,#4A8FD4,#93c5fd);
-  border:2px solid rgba(255,255,255,.15);
-  display:grid;place-items:center;
-  font-size:11px;font-weight:800;color:#fff;flex-shrink:0;
-}
-.wbm-card-a-name{font-size:12px;font-weight:700;color:rgba(255,255,255,.8);line-height:1.3}
-.wbm-card-a-role{font-size:10.5px;color:rgba(255,255,255,.32);font-weight:500}
-
-/* ── Card B — Number stat, spans 5 cols ── */
-.wbm-card-b{
-  grid-column:span 5;
-  background:#EEF4FC;
-  border-color:#dce6f4;
-  padding:36px 36px 32px;
-  display:flex;flex-direction:column;
-  justify-content:space-between;
-}
-.wbm-card-b-num{
-  font-size:5.5rem;font-weight:900;
-  letter-spacing:-.08em;line-height:1;
-  color:#1B3F6E;margin-bottom:4px;
-}
-.wbm-card-b-num span{
-  font-size:2.5rem;font-weight:300;
-  color:#4A8FD4;letter-spacing:-.04em;
-}
-.wbm-card-b-label{
-  font-size:13px;font-weight:600;color:#64748b;
-  line-height:1.5;max-width:22ch;
-}
-.wbm-card-b-icon{
-  width:44px;height:44px;border-radius:12px;
-  background:#fff;border:1.5px solid #dce6f4;
-  display:grid;place-items:center;margin-bottom:16px;
-}
-
-/* ── Card C — Horizontal feature bar, spans 4 cols ── */
-.wbm-card-c{
-  grid-column:span 4;
-  padding:28px 28px;
-  display:flex;flex-direction:column;
-  gap:0;
-}
-.wbm-card-c-title{
-  font-size:12px;font-weight:700;color:#94a3b8;
-  letter-spacing:.08em;text-transform:uppercase;
-  margin-bottom:18px;
-}
-.wbm-feat-row{
-  display:flex;align-items:center;gap:12px;
-  padding:12px 0;
-  border-bottom:1px solid #f1f5f9;
-  transition:background .18s;
-}
-.wbm-feat-row:last-child{border-bottom:none}
-.wbm-feat-icon{
-  width:32px;height:32px;border-radius:9px;
-  display:grid;place-items:center;flex-shrink:0;
-}
-.wbm-feat-text{font-size:13px;font-weight:600;color:#0f172a}
-.wbm-feat-sub{font-size:11px;color:#94a3b8;font-weight:400}
-
-/* ── Card D — Wide process visual, spans 8 cols ── */
-.wbm-card-d{
-  grid-column:span 8;
-  padding:32px 36px;
-}
-.wbm-card-d-title{
-  font-size:11px;font-weight:700;color:#94a3b8;
-  letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;
-}
-.wbm-process{
-  display:flex;align-items:center;gap:0;
-}
-.wbm-process-step{
-  flex:1;display:flex;flex-direction:column;
-  align-items:center;text-align:center;gap:10px;
-  position:relative;
-}
-.wbm-process-step::after{
-  content:'';position:absolute;
-  top:22px;left:calc(50% + 26px);
-  width:calc(100% - 52px);height:1.5px;
-  background:linear-gradient(90deg,#4A8FD4,#dce6f4);
-}
-.wbm-process-step:last-child::after{display:none}
-.wbm-process-num{
-  width:44px;height:44px;border-radius:50%;
-  background:#EEF4FC;
-  border:2px solid #dce6f4;
-  display:grid;place-items:center;
-  font-size:13px;font-weight:900;color:#1B3F6E;
-  flex-shrink:0;position:relative;z-index:1;
-  transition:background .22s,border-color .22s;
-}
-.wbm-card-d:hover .wbm-process-num{
-  background:#1B3F6E;border-color:#1B3F6E;color:#fff;
-}
-.wbm-process-label{
-  font-size:11.5px;font-weight:700;color:#0f172a;line-height:1.3
-}
-.wbm-process-sub{font-size:10.5px;color:#94a3b8;font-weight:400}
-
-/* ── Card E — Pull stat, spans 4 cols ── */
-.wbm-card-e{
-  grid-column:span 4;
-  background:linear-gradient(140deg,#f0fdf4 0%,#dcfce7 100%);
-  border-color:#bbf7d0;
-  padding:28px 28px;
-  display:flex;flex-direction:column;
-  justify-content:space-between;
-}
-.wbm-card-e-num{
-  font-size:4.2rem;font-weight:900;
-  letter-spacing:-.07em;line-height:1;
-  color:#15803d;margin-bottom:6px;
-}
-.wbm-card-e-label{
-  font-size:12.5px;font-weight:600;
-  color:#166534;line-height:1.5;
-}
-.wbm-card-e-bar{
-  height:4px;background:#bbf7d0;
-  border-radius:2px;overflow:hidden;
-  margin-top:18px;
-}
-.wbm-card-e-bar-fill{
-  height:100%;width:0%;
-  background:linear-gradient(90deg,#22c55e,#4ade80);
-  border-radius:2px;
-  transition:width 1.4s cubic-bezier(.16,1,.3,1);
-}
-
-/* ── Card F — Full-width team strip, spans 12 cols ── */
-.wbm-card-f{
-  grid-column:span 12;
-  padding:30px 36px;
-  display:flex;align-items:center;
-  gap:36px;
-  background:#ffffff;
-}
-.wbm-card-f-label{
-  font-size:11px;font-weight:700;color:#94a3b8;
-  letter-spacing:.1em;text-transform:uppercase;
-  white-space:nowrap;flex-shrink:0;
-}
-.wbm-card-f-divider{
-  width:1.5px;height:36px;
-  background:#dce6f4;flex-shrink:0;
-}
-.wbm-team-strip{
-  display:flex;align-items:center;gap:6px;flex:1;
-  overflow:hidden;flex-wrap:wrap;
-}
-.wbm-team-chip{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:6px 12px 6px 7px;
-  background:#EEF4FC;border:1.5px solid #dce6f4;
-  border-radius:100px;
-  font-size:11.5px;font-weight:600;color:#1B3F6E;
-  white-space:nowrap;cursor:default;
-  transition:background .18s,border-color .18s,transform .18s;
-}
-.wbm-team-chip:hover{
-  background:#dce6f4;border-color:#b8cee8;
-  transform:translateY(-1px);
-}
-.wbm-team-chip-av{
-  width:22px;height:22px;border-radius:50%;
-  display:grid;place-items:center;
-  font-size:8.5px;font-weight:800;color:#fff;flex-shrink:0;
-}
-.wbm-card-f-cta{
-  display:inline-flex;align-items:center;gap:7px;
-  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;
-  color:#fff;background:#1B3F6E;border:none;
-  border-radius:10px;padding:10px 18px;
-  text-decoration:none;cursor:pointer;
-  box-shadow:0 3px 14px rgba(27,63,110,.2);
-  transition:background .18s,transform .15s;
-  white-space:nowrap;flex-shrink:0;
-}
-.wbm-card-f-cta:hover{background:#2C5F9E;transform:translateY(-1px)}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .wbm-header{flex-direction:column;align-items:flex-start;gap:20px}
-  .wbm-card-a{grid-column:span 12}
-  .wbm-card-b{grid-column:span 12;flex-direction:row;align-items:center;gap:24px}
-  .wbm-card-b-num{font-size:4rem}
-  .wbm-card-c{grid-column:span 6}
-  .wbm-card-d{grid-column:span 6}
-  .wbm-card-e{grid-column:span 12}
-}
-@media(max-width:640px){
-  .wbm-max{padding:0 20px}
-  .wbm-section{padding:72px 0}
-  .wbm-card-c,.wbm-card-d,.wbm-card-e{grid-column:span 12}
-  .wbm-process{flex-wrap:wrap;gap:16px}
-  .wbm-process-step::after{display:none}
-  .wbm-card-f{flex-direction:column;align-items:flex-start;gap:16px}
-  .wbm-team-strip{flex-wrap:wrap}
-}
 /* ══════════════════════════════════
    NAV — paste inside your <style>
 ══════════════════════════════════ */
@@ -3002,6 +2721,826 @@ body{padding-top:64px}
 #wvh-vid .vid-corner {
   display: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ══════════════════════════════════════════
+   PROOF SECTION — Post-hero credibility
+   Split: marquee logos top + featured
+   case study card + trust signals
+══════════════════════════════════════════ */
+#wvh-proof {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 100px;
+}
+
+/* top border */
+#wvh-proof::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent, #dce6f4 25%, #4A8FD4 50%, #dce6f4 75%, transparent);
+}
+
+/* ══════════════════════════════════════════
+   1. LOGO MARQUEE STRIP — full width
+══════════════════════════════════════════ */
+#wvh-proof .prf-logo-strip {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 28px 0;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg,
+    transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg,
+    transparent 0%, black 8%, black 92%, transparent 100%);
+}
+#wvh-proof .prf-logo-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: prfScroll 28s linear infinite;
+}
+@keyframes prfScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+#wvh-proof .prf-logo-strip:hover .prf-logo-track {
+  animation-play-state: paused;
+}
+#wvh-proof .prf-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  opacity: .3;
+  transition: opacity .22s;
+  cursor: default;
+}
+#wvh-proof .prf-logo:hover { opacity: .7; }
+#wvh-proof .prf-logo-icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: #1B3F6E;
+  display: grid; place-items: center;
+  font-size: 13px; flex-shrink: 0;
+}
+#wvh-proof .prf-logo-name {
+  font-size: 13px; font-weight: 800;
+  color: #1e293b; letter-spacing: -.02em;
+  white-space: nowrap;
+}
+#wvh-proof .prf-logo-ind {
+  font-size: 10px; font-weight: 500;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════
+   2. MAIN BODY
+══════════════════════════════════════════ */
+#wvh-proof .prf-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px 0;
+}
+
+/* header */
+#wvh-proof .prf-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+#wvh-proof .prf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 10px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 100px;
+  background: #fff;
+  margin-bottom: 22px;
+  width: fit-content;
+}
+#wvh-proof .prf-eyebrow-dash {
+  display: block; width: 14px; height: 1.5px;
+  background: #94a3b8; border-radius: 2px;
+}
+#wvh-proof .prf-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #1B3F6E;
+  box-shadow: 0 0 6px rgba(27,63,110,.4);
+}
+#wvh-proof .prf-eyebrow-txt {
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: #475569;
+}
+#wvh-proof .prf-title {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.01; letter-spacing: -.04em; margin: 0;
+}
+#wvh-proof .prf-title .t-bold  { display: block; font-weight: 900; color: #0f172a; }
+#wvh-proof .prf-title .t-light { display: block; font-weight: 300; color: #94a3b8; }
+#wvh-proof .prf-title .t-italic{ display: block; font-weight: 900; font-style: italic; color: #1B3F6E; }
+
+#wvh-proof .prf-header-right {
+  display: flex; flex-direction: column; gap: 0;
+}
+#wvh-proof .prf-sub {
+  font-size: 14.5px; line-height: 1.78;
+  color: #64748b; margin-bottom: 28px;
+}
+#wvh-proof .prf-sub strong { color: #1e293b; font-weight: 600; }
+
+/* industry filter tabs */
+#wvh-proof .prf-tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+#wvh-proof .prf-tab {
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 11px; font-weight: 700;
+  color: #64748b; cursor: pointer;
+  transition: all .18s;
+  user-select: none;
+}
+#wvh-proof .prf-tab:hover {
+  background: #EEF4FC; border-color: #b8cee8; color: #1B3F6E;
+}
+#wvh-proof .prf-tab.active {
+  background: #1B3F6E; border-color: #1B3F6E;
+  color: #fff;
+}
+
+/* ══════════════════════════════════════════
+   3. CASE STUDY GRID
+   1 large featured + 2 small side
+══════════════════════════════════════════ */
+#wvh-proof .prf-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+/* ── FEATURED card ── */
+#wvh-proof .prf-card-featured {
+  grid-row: 1 / 3;
+  background: #07111f;
+  border-radius: 22px;
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  cursor: default;
+  transition: box-shadow .3s;
+}
+#wvh-proof .prf-card-featured:hover {
+  box-shadow: 0 24px 60px rgba(27,63,110,.2);
+}
+#wvh-proof .prf-card-featured::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+#wvh-proof .prf-card-featured::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,143,212,.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* big quote mark */
+#wvh-proof .prf-quote-mark {
+  position: absolute;
+  top: 32px; right: 36px;
+  font-size: 80px; font-weight: 900;
+  color: rgba(255,255,255,.04);
+  line-height: 1;
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -.04em;
+}
+
+#wvh-proof .prf-feat-top { position: relative; z-index: 1; }
+
+/* industry tag */
+#wvh-proof .prf-ind-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px;
+  background: rgba(74,143,212,.15);
+  border: 1px solid rgba(74,143,212,.25);
+  border-radius: 100px;
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #93c5fd; margin-bottom: 24px;
+}
+#wvh-proof .prf-ind-tag-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #4A8FD4;
+  box-shadow: 0 0 5px rgba(74,143,212,.7);
+}
+
+/* quote text — 3-line weight style */
+#wvh-proof .prf-quote {
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+  line-height: 1.28; letter-spacing: -.035em;
+  margin: 0 0 28px;
+}
+#wvh-proof .prf-quote .q-bold {
+  display: block; font-weight: 900; color: rgba(255,255,255,.92);
+}
+#wvh-proof .prf-quote .q-light {
+  display: block; font-weight: 300; color: rgba(255,255,255,.3);
+}
+#wvh-proof .prf-quote .q-italic {
+  display: block; font-weight: 900; font-style: italic; color: #93c5fd;
+}
+
+/* result chips */
+#wvh-proof .prf-results {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
+}
+#wvh-proof .prf-result {
+  padding: 6px 12px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,.6);
+}
+#wvh-proof .prf-result b { color: #93c5fd; font-weight: 900; }
+
+/* person row */
+#wvh-proof .prf-person {
+  display: flex; align-items: center;
+  gap: 14px; position: relative; z-index: 1;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+#wvh-proof .prf-avatar {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1B3F6E, #4A8FD4);
+  display: grid; place-items: center;
+  font-size: 16px; font-weight: 900;
+  color: #fff; flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,.1);
+}
+#wvh-proof .prf-person-name {
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,.8); line-height: 1.2;
+}
+#wvh-proof .prf-person-role {
+  font-size: 11px; font-weight: 500;
+  color: rgba(255,255,255,.28); margin-top: 2px;
+}
+#wvh-proof .prf-person-co {
+  margin-left: auto;
+  font-size: 10px; font-weight: 800;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(255,255,255,.2);
+}
+
+/* ── SMALL cards ── */
+#wvh-proof .prf-card-small {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 28px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+  transition: border-color .24s, box-shadow .24s, transform .24s;
+  position: relative;
+  overflow: hidden;
+}
+#wvh-proof .prf-card-small:hover {
+  border-color: #b8cee8;
+  box-shadow: 0 12px 36px rgba(27,63,110,.09);
+  transform: translateY(-3px);
+}
+#wvh-proof .prf-card-small::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #1B3F6E, #4A8FD4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+#wvh-proof .prf-card-small:hover::after { transform: scaleX(1); }
+
+#wvh-proof .prf-small-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #94a3b8; margin-bottom: 16px;
+}
+#wvh-proof .prf-small-tag-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #4A8FD4;
+}
+#wvh-proof .prf-small-quote {
+  font-size: 14px; font-weight: 700;
+  color: #1e293b; line-height: 1.45;
+  letter-spacing: -.025em; margin-bottom: 20px;
+  flex: 1;
+}
+#wvh-proof .prf-small-quote em {
+  font-style: italic; color: #1B3F6E;
+}
+
+/* metric highlight */
+#wvh-proof .prf-metric {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+#wvh-proof .prf-metric-val {
+  font-size: 1.3rem; font-weight: 900;
+  letter-spacing: -.04em; color: #1B3F6E; line-height: 1;
+}
+#wvh-proof .prf-metric-divider {
+  width: 1px; height: 24px; background: #e2e8f0; flex-shrink: 0;
+}
+#wvh-proof .prf-metric-lbl {
+  font-size: 11px; font-weight: 500;
+  color: #64748b; line-height: 1.4;
+}
+
+#wvh-proof .prf-small-person {
+  display: flex; align-items: center; gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+#wvh-proof .prf-small-avatar {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #1B3F6E, #4A8FD4);
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 900;
+  color: #fff; flex-shrink: 0;
+}
+#wvh-proof .prf-small-name {
+  font-size: 12px; font-weight: 700; color: #1e293b; line-height: 1.2;
+}
+#wvh-proof .prf-small-role {
+  font-size: 10.5px; font-weight: 500; color: #94a3b8; margin-top: 1px;
+}
+
+/* ══════════════════════════════════════════
+   4. BOTTOM TRUST BAR
+══════════════════════════════════════════ */
+#wvh-proof .prf-trust-bar {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+#wvh-proof .prf-trust-item {
+  padding: 20px 24px;
+  border-right: 1px solid #e2e8f0;
+  display: flex; align-items: center; gap: 14px;
+  transition: background .18s;
+  cursor: default;
+}
+#wvh-proof .prf-trust-item:last-child { border-right: none; }
+#wvh-proof .prf-trust-item:hover { background: #EEF4FC; }
+#wvh-proof .prf-trust-ico {
+  font-size: 22px; flex-shrink: 0;
+}
+#wvh-proof .prf-trust-val {
+  font-size: 1.1rem; font-weight: 900;
+  color: #1B3F6E; letter-spacing: -.03em;
+  line-height: 1;
+}
+#wvh-proof .prf-trust-lbl {
+  font-size: 10px; font-weight: 500;
+  color: #94a3b8; margin-top: 2px;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  #wvh-proof .prf-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  #wvh-proof .prf-card-featured { grid-row: auto; min-height: 380px; }
+  #wvh-proof .prf-header { gap: 48px; }
+}
+@media (max-width: 900px) {
+  #wvh-proof .prf-header { grid-template-columns: 1fr; gap: 28px; }
+  #wvh-proof .prf-inner  { padding: 60px 28px 0; }
+  #wvh-proof .prf-trust-bar { grid-template-columns: 1fr 1fr; }
+  #wvh-proof .prf-trust-item:nth-child(2) { border-right: none; }
+  #wvh-proof .prf-trust-item:nth-child(1),
+  #wvh-proof .prf-trust-item:nth-child(2) { border-bottom: 1px solid #e2e8f0; }
+}
+@media (max-width: 560px) {
+  #wvh-proof .prf-inner { padding: 44px 16px 0; }
+  #wvh-proof .prf-card-featured { padding: 28px 22px; }
+  #wvh-proof .prf-trust-bar { grid-template-columns: 1fr; }
+  #wvh-proof .prf-trust-item { border-right: none; border-bottom: 1px solid #e2e8f0; }
+  #wvh-proof .prf-trust-item:last-child { border-bottom: none; }
+}
+/* ══════════════════════════════════════════
+   PAIN → SOLUTION SECTION
+   Split: left = problems (dark cards)
+          right = sticky solution panel
+══════════════════════════════════════════ */
+#wvh-pain {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+#wvh-pain::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent, #dce6f4 25%, #4A8FD4 50%, #dce6f4 75%, transparent);
+}
+
+/* ── inner ── */
+#wvh-pain .pain-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+#wvh-pain .pain-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: end;
+  margin-bottom: 72px;
+}
+#wvh-pain .pain-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 14px 5px 10px;
+  border: 1.5px solid #e2e8f0; border-radius: 100px;
+  background: #fff; margin-bottom: 22px; width: fit-content;
+}
+#wvh-pain .pain-eyebrow-dash {
+  display: block; width: 14px; height: 1.5px;
+  background: #94a3b8; border-radius: 2px;
+}
+#wvh-pain .pain-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #1B3F6E; box-shadow: 0 0 6px rgba(27,63,110,.4);
+}
+#wvh-pain .pain-eyebrow-txt {
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: #475569;
+}
+#wvh-pain .pain-title {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.01; letter-spacing: -.04em; margin: 0;
+}
+#wvh-pain .pain-title .t-bold  { display: block; font-weight: 900; color: #0f172a; }
+#wvh-pain .pain-title .t-light { display: block; font-weight: 300; color: #94a3b8; }
+#wvh-pain .pain-title .t-italic{ display: block; font-weight: 900; font-style: italic; color: #1B3F6E; }
+
+#wvh-pain .pain-header-right {
+  display: flex; flex-direction: column; gap: 28px;
+}
+#wvh-pain .pain-sub {
+  font-size: 14.5px; line-height: 1.78; color: #64748b;
+}
+#wvh-pain .pain-sub strong { color: #1e293b; font-weight: 600; }
+
+/* toggle switch — before / after */
+#wvh-pain .pain-toggle {
+  display: inline-flex; align-items: center;
+  background: #f8fafc; border: 1.5px solid #e2e8f0;
+  border-radius: 100px; padding: 4px; gap: 2px;
+  width: fit-content;
+}
+#wvh-pain .pain-toggle-btn {
+  padding: 7px 18px; border-radius: 100px;
+  font-size: 11px; font-weight: 700;
+  cursor: pointer; transition: all .22s;
+  color: #94a3b8; user-select: none;
+}
+#wvh-pain .pain-toggle-btn.active {
+  background: #07111f; color: #fff;
+  box-shadow: 0 2px 10px rgba(7,17,31,.2);
+}
+
+/* ══════════════════════════════════════════
+   BODY — 2-col sticky layout
+══════════════════════════════════════════ */
+#wvh-pain .pain-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ══════════════════════════════════════════
+   LEFT — problem cards stack
+══════════════════════════════════════════ */
+#wvh-pain .pain-left {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+#wvh-pain .pain-prob-card {
+  background: #fff;
+  border: 1.5px solid #f1f5f9;
+  border-radius: 18px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .24s, box-shadow .24s;
+  position: relative;
+}
+#wvh-pain .pain-prob-card:hover,
+#wvh-pain .pain-prob-card.active {
+  border-color: #e2e8f0;
+  box-shadow: 0 8px 32px rgba(27,63,110,.07);
+}
+
+/* card header row — always visible */
+#wvh-pain .pain-prob-head {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+}
+
+/* number */
+#wvh-pain .pain-prob-num {
+  width: 40px; height: 40px; border-radius: 11px;
+  background: #f8fafc; border: 1.5px solid #e2e8f0;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 800;
+  color: #cbd5e1; flex-shrink: 0;
+  transition: background .24s, border-color .24s, color .24s;
+}
+#wvh-pain .pain-prob-card.active .pain-prob-num {
+  background: #07111f; border-color: #07111f; color: #fff;
+}
+
+/* title */
+#wvh-pain .pain-prob-title {
+  font-size: 13.5px; font-weight: 700;
+  color: #64748b; line-height: 1.3;
+  transition: color .2s;
+}
+#wvh-pain .pain-prob-card.active .pain-prob-title { color: #0f172a; }
+
+/* chevron */
+#wvh-pain .pain-prob-chev {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: #f8fafc; border: 1px solid #e2e8f0;
+  display: grid; place-items: center; flex-shrink: 0;
+  transition: background .2s, transform .28s cubic-bezier(.16,1,.3,1);
+}
+#wvh-pain .pain-prob-card.active .pain-prob-chev {
+  background: #f1f5f9; transform: rotate(180deg);
+}
+
+/* accordion expand */
+#wvh-pain .pain-prob-body {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows .3s cubic-bezier(.16,1,.3,1);
+}
+#wvh-pain .pain-prob-card.active .pain-prob-body {
+  grid-template-rows: 1fr;
+}
+#wvh-pain .pain-prob-body-inner { overflow: hidden; }
+
+#wvh-pain .pain-prob-content {
+  padding: 0 24px 22px;
+  border-top: 1px solid #f8fafc;
+  margin: 0 24px;
+}
+#wvh-pain .pain-prob-content p {
+  font-size: 13px; line-height: 1.72;
+  color: #64748b; margin: 16px 0 14px;
+}
+#wvh-pain .pain-prob-content strong { color: #1e293b; font-weight: 600; }
+
+/* "what our clients say" micro-quote */
+#wvh-pain .pain-micro-quote {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px;
+  background: #f8fafc; border: 1px solid #f1f5f9;
+  border-radius: 10px;
+}
+#wvh-pain .pain-mq-bar {
+  width: 2px; min-height: 100%; border-radius: 2px;
+  background: linear-gradient(180deg, #1B3F6E, #4A8FD4);
+  flex-shrink: 0; align-self: stretch;
+}
+#wvh-pain .pain-mq-txt {
+  font-size: 11.5px; font-style: italic;
+  color: #475569; line-height: 1.6; font-weight: 500;
+}
+#wvh-pain .pain-mq-author {
+  font-size: 10px; font-weight: 700;
+  color: #94a3b8; margin-top: 6px;
+  font-style: normal;
+}
+
+/* ══════════════════════════════════════════
+   RIGHT — sticky solution panel
+══════════════════════════════════════════ */
+#wvh-pain .pain-right {
+  position: sticky;
+  top: 60px;
+}
+
+#wvh-pain .pain-sol-card {
+  background: #07111f;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+}
+#wvh-pain .pain-sol-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 22px 22px; pointer-events: none;
+}
+#wvh-pain .pain-sol-card::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,143,212,.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* sol top */
+#wvh-pain .pain-sol-top {
+  padding: 36px 36px 32px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  position: relative; z-index: 1;
+}
+
+#wvh-pain .pain-sol-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px;
+  background: rgba(74,143,212,.15);
+  border: 1px solid rgba(74,143,212,.25);
+  border-radius: 100px;
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #93c5fd; margin-bottom: 20px;
+}
+#wvh-pain .pain-sol-tag-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #4A8FD4;
+  box-shadow: 0 0 5px rgba(74,143,212,.7);
+  animation: solPing 2s ease-in-out infinite;
+}
+@keyframes solPing {
+  0%,100% { box-shadow: 0 0 0 0 rgba(74,143,212,.6); }
+  50%      { box-shadow: 0 0 0 5px rgba(74,143,212,0); }
+}
+
+#wvh-pain .pain-sol-title {
+  font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+  line-height: 1.1; letter-spacing: -.04em; margin: 0 0 14px;
+}
+#wvh-pain .pain-sol-title .t-bold  { display: block; font-weight: 900; color: rgba(255,255,255,.92); }
+#wvh-pain .pain-sol-title .t-light { display: block; font-weight: 300; color: rgba(255,255,255,.3); }
+#wvh-pain .pain-sol-title .t-italic{ display: block; font-weight: 900; font-style: italic; color: #93c5fd; }
+
+#wvh-pain .pain-sol-desc {
+  font-size: 13px; line-height: 1.72;
+  color: rgba(255,255,255,.35);
+}
+#wvh-pain .pain-sol-desc strong { color: rgba(255,255,255,.65); font-weight: 600; }
+
+/* sol checklist */
+#wvh-pain .pain-sol-list {
+  padding: 28px 36px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative; z-index: 1;
+}
+#wvh-pain .pain-sol-item {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+#wvh-pain .pain-sol-check {
+  width: 20px; height: 20px; border-radius: 6px;
+  background: rgba(74,143,212,.15);
+  border: 1px solid rgba(74,143,212,.3);
+  display: grid; place-items: center; flex-shrink: 0;
+  margin-top: 1px;
+}
+#wvh-pain .pain-sol-item-text {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,.55); line-height: 1.5;
+}
+#wvh-pain .pain-sol-item-text b {
+  color: rgba(255,255,255,.8); font-weight: 700;
+  display: block; font-size: 13.5px; margin-bottom: 2px;
+}
+
+/* sol bottom — CTA */
+#wvh-pain .pain-sol-bottom {
+  padding: 28px 36px;
+  position: relative; z-index: 1;
+}
+
+/* active problem indicator — syncs with left */
+#wvh-pain .pain-sol-active-prob {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: opacity .3s;
+}
+#wvh-pain .pain-sol-active-icon { font-size: 16px; flex-shrink: 0; }
+#wvh-pain .pain-sol-active-lbl {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.22); margin-bottom: 2px;
+}
+#wvh-pain .pain-sol-active-txt {
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,.6); line-height: 1.3;
+}
+
+#wvh-pain .pain-cta-btn {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  width: 100%; padding: 14px 20px;
+  background: #fff; border: none; border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 700; color: #07111f;
+  cursor: pointer;
+  transition: background .18s, transform .18s, box-shadow .18s;
+  text-decoration: none;
+}
+#wvh-pain .pain-cta-btn:hover {
+  background: rgba(255,255,255,.9);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255,255,255,.12);
+}
+#wvh-pain .pain-cta-btn svg { flex-shrink: 0; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  #wvh-pain .pain-body { grid-template-columns: 1fr; }
+  #wvh-pain .pain-right { position: static; }
+}
+@media (max-width: 900px) {
+  #wvh-pain .pain-header { grid-template-columns: 1fr; gap: 28px; }
+  #wvh-pain .pain-inner  { padding: 64px 28px; }
+}
+@media (max-width: 560px) {
+  #wvh-pain .pain-inner  { padding: 48px 16px; }
+  #wvh-pain .pain-sol-top,
+  #wvh-pain .pain-sol-list,
+  #wvh-pain .pain-sol-bottom { padding-left: 22px; padding-right: 22px; }
+  #wvh-pain .pain-prob-head { grid-template-columns: 40px 1fr auto; gap: 12px; padding: 16px 18px; }
+}
 </style>
 </head>
 <body>
@@ -3158,181 +3697,433 @@ body{padding-top:64px}
         <div class="vid-stat-lbl">Custom code</div>
       </div>
     </div>
-
   </div>
-
 </section>
 
-<section class="wbm-section">
-  <div class="wbm-max">
+<section id="wvh-pain">
+  <div class="pain-inner">
 
-    <!-- Header -->
-    <div class="wbm-header">
+    <!-- ════ HEADER ════ -->
+    <div class="pain-header">
       <div>
-        <div class="wbm-eyebrow">
-          <span class="wbm-eyebrow-bar"></span>
-          Why Walue
+        <div class="pain-eyebrow">
+          <span class="pain-eyebrow-dash"></span>
+          <span class="pain-eyebrow-dot"></span>
+          <span class="pain-eyebrow-txt">Why ERPNext fails</span>
         </div>
-        <h2 class="wbm-heading">
-          Built different,<br><em>on purpose.</em>
+        <h2 class="pain-title">
+          <span class="t-bold">The problems</span>
+          <span class="t-light">every business faces</span>
+          <span class="t-italic">before us.</span>
         </h2>
       </div>
-      <p class="wbm-header-right">
-        We're not a reseller. We're not a support desk.
-        We're a team of engineers and consultants who've spent years
-        <strong>inside Frappe's codebase</strong> — building systems that
-        actually hold up in production.
-      </p>
+      <div class="pain-header-right">
+        <p class="pain-sub">
+          ERPNext is powerful. But <strong>most implementations fail</strong>
+          — not because of the software, but because of how it's implemented.
+          Here's what goes wrong, and exactly how we fix it.
+        </p>
+        <div class="pain-toggle" id="painToggle">
+          <div class="pain-toggle-btn active" data-mode="before">The Problem</div>
+          <div class="pain-toggle-btn" data-mode="after">Our Fix</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Bento Grid -->
-    <div class="wbm-grid">
+    <!-- ════ BODY ════ -->
+    <div class="pain-body">
 
-      <!-- A — dark quote card -->
-      <div class="wbm-card wbm-card-a">
-        <div class="wbm-card-a-noise"></div>
-        <div class="wbm-card-a-glow"></div>
-        <div class="wbm-card-a-tag">
-          <span class="wbm-card-a-tag-dot"></span>
-          Our philosophy
+      <!-- LEFT — problem cards -->
+      <div class="pain-left" id="painLeft">
+
+        <!-- Problem 1 -->
+        <div class="pain-prob-card active" data-prob="0">
+          <div class="pain-prob-head">
+            <div class="pain-prob-num">01</div>
+            <div class="pain-prob-title">No fixed timeline — projects drag for months</div>
+            <div class="pain-prob-chev">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M2 4l3.5 3.5L9 4"/></svg>
+            </div>
+          </div>
+          <div class="pain-prob-body">
+            <div class="pain-prob-body-inner">
+              <div class="pain-prob-content">
+                <p>Most vendors quote <strong>"8–12 months"</strong> with no fixed end date. Every delay costs you money, staff patience, and confidence. Businesses go live 2 years later — or never.</p>
+                <div class="pain-micro-quote">
+                  <div class="pain-mq-bar"></div>
+                  <div>
+                    <div class="pain-mq-txt">"Our previous vendor started in January 2022. By December 2023 we still weren't live. We called these guys in February 2024 and went live in April."</div>
+                    <div class="pain-mq-author">— Director, Manufacturing co. Bengaluru</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="wbm-card-a-body">
-          <p class="wbm-card-a-quote">
-            "An ERP that requires your team to change how they work<br>
-            <em>isn't an ERP — it's a liability.</em>"
+
+        <!-- Problem 2 -->
+        <div class="pain-prob-card" data-prob="1">
+          <div class="pain-prob-head">
+            <div class="pain-prob-num">02</div>
+            <div class="pain-prob-title">Scope keeps expanding — invoice keeps growing</div>
+            <div class="pain-prob-chev">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M2 4l3.5 3.5L9 4"/></svg>
+            </div>
+          </div>
+          <div class="pain-prob-body">
+            <div class="pain-prob-body-inner">
+              <div class="pain-prob-content">
+                <p>You sign a contract for ₹4L. Six months later you've paid ₹11L in "change requests" for features that should have been included. <strong>Scope creep kills ERP projects.</strong></p>
+                <div class="pain-micro-quote">
+                  <div class="pain-mq-bar"></div>
+                  <div>
+                    <div class="pain-mq-txt">"Every week there was a new invoice for something that 'wasn't in scope'. We had no idea what we'd signed up for."</div>
+                    <div class="pain-mq-author">— CFO, Trading company, Chennai</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="pain-prob-card" data-prob="2">
+          <div class="pain-prob-head">
+            <div class="pain-prob-num">03</div>
+            <div class="pain-prob-title">Custom code written — then no one can maintain it</div>
+            <div class="pain-prob-chev">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M2 4l3.5 3.5L9 4"/></svg>
+            </div>
+          </div>
+          <div class="pain-prob-body">
+            <div class="pain-prob-body-inner">
+              <div class="pain-prob-content">
+                <p>Vendors write thousands of lines of custom code to "fit" your process. Every ERPNext update breaks it. You're now <strong>dependent on that vendor forever</strong> — at whatever price they charge.</p>
+                <div class="pain-micro-quote">
+                  <div class="pain-mq-bar"></div>
+                  <div>
+                    <div class="pain-mq-txt">"After they left, our system broke on every update. Nobody in our team could touch the code. We were hostages."</div>
+                    <div class="pain-mq-author">— IT Head, Retail chain, Hyderabad</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="pain-prob-card" data-prob="3">
+          <div class="pain-prob-head">
+            <div class="pain-prob-num">04</div>
+            <div class="pain-prob-title">Training is a 2-hour demo — your team is lost</div>
+            <div class="pain-prob-chev">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M2 4l3.5 3.5L9 4"/></svg>
+            </div>
+          </div>
+          <div class="pain-prob-body">
+            <div class="pain-prob-body-inner">
+              <div class="pain-prob-content">
+                <p>A generic walkthrough of menus is not training. Your accounts team, warehouse staff, and sales team all have different needs. <strong>One session fits nobody.</strong></p>
+                <div class="pain-micro-quote">
+                  <div class="pain-mq-bar"></div>
+                  <div>
+                    <div class="pain-mq-txt">"They gave us a 2-hour Zoom call and said we were trained. Half my team didn't even know how to raise a purchase order."</div>
+                    <div class="pain-mq-author">— Operations Manager, Logistics firm, Mumbai</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 5 -->
+        <div class="pain-prob-card" data-prob="4">
+          <div class="pain-prob-head">
+            <div class="pain-prob-num">05</div>
+            <div class="pain-prob-title">Go-live day is chaos — then they disappear</div>
+            <div class="pain-prob-chev">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="M2 4l3.5 3.5L9 4"/></svg>
+            </div>
+          </div>
+          <div class="pain-prob-body">
+            <div class="pain-prob-body-inner">
+              <div class="pain-prob-content">
+                <p>Data migrates wrong, first transactions fail, nobody picks up the phone. The vendor calls it "hypercare" but you haven't heard from them in 3 weeks. <strong>The first 30 days are the most critical</strong> — and you're alone.</p>
+                <div class="pain-micro-quote">
+                  <div class="pain-mq-bar"></div>
+                  <div>
+                    <div class="pain-mq-txt">"On go-live day our stock levels were wrong, our invoices weren't printing, and our vendor's phone was off. It was a disaster."</div>
+                    <div class="pain-mq-author">— MD, Wholesale distributor, Pune</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pain-left -->
+
+      <!-- RIGHT — sticky solution -->
+      <div class="pain-right">
+        <div class="pain-sol-card">
+
+          <div class="pain-sol-top">
+            <div class="pain-sol-tag">
+              <span class="pain-sol-tag-dot"></span>
+              How we solve this
+            </div>
+            <h3 class="pain-sol-title">
+              <span class="t-bold">Built differently,</span>
+              <span class="t-light">from day one,</span>
+              <span class="t-italic">on purpose.</span>
+            </h3>
+            <p class="pain-sol-desc">
+              Every problem on the left is something we've seen, documented,
+              and <strong>systematically eliminated</strong> from our process.
+            </p>
+          </div>
+
+          <div class="pain-sol-list">
+            <div class="pain-sol-item">
+              <div class="pain-sol-check">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5l2.5 2.5 5-5" stroke="#4A8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="pain-sol-item-text">
+                <b>Locked go-live date — signed on Day 2</b>
+                Not a range. A specific date. In the contract.
+              </div>
+            </div>
+            <div class="pain-sol-item">
+              <div class="pain-sol-check">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5l2.5 2.5 5-5" stroke="#4A8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="pain-sol-item-text">
+                <b>Fixed price — no change requests</b>
+                Scope is defined upfront. What's in is in. Nothing added.
+              </div>
+            </div>
+            <div class="pain-sol-item">
+              <div class="pain-sol-check">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5l2.5 2.5 5-5" stroke="#4A8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="pain-sol-item-text">
+                <b>Zero custom code — ever</b>
+                Standard ERPNext only. Every update works. No hostage situation.
+              </div>
+            </div>
+            <div class="pain-sol-item">
+              <div class="pain-sol-check">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5l2.5 2.5 5-5" stroke="#4A8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="pain-sol-item-text">
+                <b>Role-based training — not a demo</b>
+                Each team gets their own session with their own data.
+              </div>
+            </div>
+            <div class="pain-sol-item">
+              <div class="pain-sol-check">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5l2.5 2.5 5-5" stroke="#4A8FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="pain-sol-item-text">
+                <b>30-day hypercare — we don't disappear</b>
+                Same-day response. Weekly health checks. Included, not billed.
+              </div>
+            </div>
+          </div>
+
+          <div class="pain-sol-bottom">
+            <!-- active problem indicator -->
+            <div class="pain-sol-active-prob" id="painActiveProb">
+              <div class="pain-sol-active-icon">💡</div>
+              <div>
+                <div class="pain-sol-active-lbl">Currently viewing fix for</div>
+                <div class="pain-sol-active-txt" id="painActiveTxt">No fixed timeline — projects drag for months</div>
+              </div>
+            </div>
+            <a href="#contact" class="pain-cta-btn">
+              See how we'd approach your project
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div><!-- /pain-right -->
+
+    </div><!-- /pain-body -->
+  </div>
+</section>
+
+
+<section id="wvh-proof">
+  <div class="prf-inner">
+
+    <!-- ════ 2. HEADER ════ -->
+    <div class="prf-header">
+      <div>
+        <div class="prf-eyebrow">
+          <span class="prf-eyebrow-dash"></span>
+          <span class="prf-eyebrow-dot"></span>
+          <span class="prf-eyebrow-txt">Client Results</span>
+        </div>
+        <h2 class="prf-title">
+          <span class="t-bold">Real companies,</span>
+          <span class="t-light">real go-lives,</span>
+          <span class="t-italic">real outcomes.</span>
+        </h2>
+      </div>
+      <div class="prf-header-right">
+        <p class="prf-sub">
+          Not case studies written by a marketing team.
+          These are <strong>actual clients</strong> — their words,
+          their numbers, their go-live dates.
+        </p>
+        <div class="prf-tabs">
+          <div class="prf-tab active">All</div>
+          <div class="prf-tab">Manufacturing</div>
+          <div class="prf-tab">Trading</div>
+          <div class="prf-tab">Services</div>
+          <div class="prf-tab">Retail</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ 3. CASE STUDY GRID ════ -->
+    <div class="prf-grid">
+
+      <!-- FEATURED -->
+      <div class="prf-card-featured">
+        <div class="prf-quote-mark">"</div>
+        <div class="prf-feat-top">
+          <div class="prf-ind-tag">
+            <span class="prf-ind-tag-dot"></span>
+            Manufacturing · Bengaluru
+          </div>
+          <blockquote class="prf-quote">
+            <span class="q-bold">We went live in 9 weeks.</span>
+            <span class="q-light">Our previous vendor took 14 months</span>
+            <span class="q-italic">and never finished.</span>
+          </blockquote>
+          <div class="prf-results">
+            <div class="prf-result">Live in <b>9 weeks</b></div>
+            <div class="prf-result">Prev. vendor: <b>14 months</b></div>
+            <div class="prf-result"><b>₹0</b> custom code</div>
+            <div class="prf-result"><b>3</b> warehouses connected</div>
+          </div>
+        </div>
+        <div class="prf-person">
+          <div class="prf-avatar">R</div>
+          <div>
+            <div class="prf-person-name">Rajesh Sharma</div>
+            <div class="prf-person-role">Director of Operations</div>
+          </div>
+          <div class="prf-person-co">Pinnacle Mfg.</div>
+        </div>
+      </div>
+
+      <!-- SMALL 1 -->
+      <div class="prf-card-small">
+        <div>
+          <div class="prf-small-tag">
+            <span class="prf-small-tag-dot"></span>
+            Trading · Chennai
+          </div>
+          <p class="prf-small-quote">
+            "Our accounts team was live and independent
+            <em>within the first week.</em> No hand-holding needed."
           </p>
-          <div class="wbm-card-a-author">
-            <div class="wbm-card-a-avatar">AK</div>
+        </div>
+        <div>
+          <div class="prf-metric">
+            <div class="prf-metric-val">7 days</div>
+            <div class="prf-metric-divider"></div>
+            <div class="prf-metric-lbl">Accounts team fully independent post go-live</div>
+          </div>
+          <div class="prf-small-person">
+            <div class="prf-small-avatar">A</div>
             <div>
-              <div class="wbm-card-a-name">Arjun K.</div>
-              <div class="wbm-card-a-role">Co-founder, Walue.biz</div>
+              <div class="prf-small-name">Ananya Krishnan</div>
+              <div class="prf-small-role">CFO · Vertex Traders</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- B — stat card -->
-      <div class="wbm-card wbm-card-b">
-        <div class="wbm-card-b-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round"><path d="M3 14l4-4 3 3 4-5 3 3"/><rect x="1.5" y="1.5" width="17" height="17" rx="3"/></svg>
+      <!-- SMALL 2 -->
+      <div class="prf-card-small">
+        <div>
+          <div class="prf-small-tag">
+            <span class="prf-small-tag-dot"></span>
+            Services · Hyderabad
+          </div>
+          <p class="prf-small-quote">
+            "The scope document they gave us on day 2
+            <em>was more detailed</em> than our previous vendor's final report."
+          </p>
         </div>
         <div>
-          <div class="wbm-card-b-num">40<span>+</span></div>
-          <div class="wbm-card-b-label">Live ERPNext systems running in production across India</div>
-        </div>
-      </div>
-
-      <!-- C — feature list -->
-      <div class="wbm-card wbm-card-c">
-        <div class="wbm-card-c-title">What sets us apart</div>
-        <div class="wbm-feat-row">
-          <div class="wbm-feat-icon" style="background:#EEF4FC">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#1B3F6E" stroke-width="1.7" stroke-linecap="round"><path d="M8 1l2 5h5L11 9l1.5 5L8 11l-4.5 3L5 9 1 6h5Z"/></svg>
+          <div class="prf-metric">
+            <div class="prf-metric-val">Day 2</div>
+            <div class="prf-metric-divider"></div>
+            <div class="prf-metric-lbl">Complete scope document delivered and signed off</div>
           </div>
-          <div>
-            <div class="wbm-feat-text">Frappe-native team</div>
-            <div class="wbm-feat-sub">No third-party stack</div>
-          </div>
-        </div>
-        <div class="wbm-feat-row">
-          <div class="wbm-feat-icon" style="background:#f0fdf4">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#16a34a" stroke-width="1.7" stroke-linecap="round"><path d="M2 8l4 4 8-8"/></svg>
-          </div>
-          <div>
-            <div class="wbm-feat-text">Fixed-scope delivery</div>
-            <div class="wbm-feat-sub">No billing surprises</div>
-          </div>
-        </div>
-        <div class="wbm-feat-row">
-          <div class="wbm-feat-icon" style="background:#fffbeb">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#d97706" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="4" width="12" height="9" rx="2"/><path d="M5 4V3a3 3 0 0 1 6 0v1"/></svg>
-          </div>
-          <div>
-            <div class="wbm-feat-text">AWS-hardened infra</div>
-            <div class="wbm-feat-sub">VPC, RDS, S3 standard</div>
-          </div>
-        </div>
-        <div class="wbm-feat-row">
-          <div class="wbm-feat-icon" style="background:#fdf4ff">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#9333ea" stroke-width="1.7" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M5 8l2.5 2.5 4-4"/></svg>
-          </div>
-          <div>
-            <div class="wbm-feat-text">Post-launch support</div>
-            <div class="wbm-feat-sub">12-month included</div>
+          <div class="prf-small-person">
+            <div class="prf-small-avatar">M</div>
+            <div>
+              <div class="prf-small-name">Mohammed Irfan</div>
+              <div class="prf-small-role">CEO · Meridian Services</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- D — process visual -->
-      <div class="wbm-card wbm-card-d">
-        <div class="wbm-card-d-title">How we work</div>
-        <div class="wbm-process">
-          <div class="wbm-process-step">
-            <div class="wbm-process-num">1</div>
-            <div class="wbm-process-label">Discovery</div>
-            <div class="wbm-process-sub">2 weeks</div>
-          </div>
-          <div class="wbm-process-step">
-            <div class="wbm-process-num">2</div>
-            <div class="wbm-process-label">Design</div>
-            <div class="wbm-process-sub">3 weeks</div>
-          </div>
-          <div class="wbm-process-step">
-            <div class="wbm-process-num">3</div>
-            <div class="wbm-process-label">Build</div>
-            <div class="wbm-process-sub">5 weeks</div>
-          </div>
-          <div class="wbm-process-step">
-            <div class="wbm-process-num">4</div>
-            <div class="wbm-process-label">Train</div>
-            <div class="wbm-process-sub">1 week</div>
-          </div>
-          <div class="wbm-process-step">
-            <div class="wbm-process-num">5</div>
-            <div class="wbm-process-label">Go Live</div>
-            <div class="wbm-process-sub">Week 12</div>
-          </div>
+    </div><!-- /prf-grid -->
+
+    <!-- ════ 4. TRUST BAR ════ -->
+    <div class="prf-trust-bar">
+      <div class="prf-trust-item">
+        <div class="prf-trust-ico">🏭</div>
+        <div>
+          <div class="prf-trust-val">18 industries</div>
+          <div class="prf-trust-lbl">Served across India</div>
         </div>
       </div>
-
-      <!-- E — green stat -->
-
-      <!-- F — team strip -->
-      <div class="wbm-card wbm-card-f">
-        <div class="wbm-card-f-label">Our team</div>
-        <div class="wbm-card-f-divider"></div>
-        <div class="wbm-team-strip">
-          <div class="wbm-team-chip">
-            <div class="wbm-team-chip-av" style="background:linear-gradient(135deg,#1B3F6E,#4A8FD4)">AK</div>Arjun K.
-          </div>
-          <div class="wbm-team-chip">
-            <div class="wbm-team-chip-av" style="background:linear-gradient(135deg,#0d6742,#22c55e)">SR</div>Sneha R.
-          </div>
-          <div class="wbm-team-chip">
-            <div class="wbm-team-chip-av" style="background:linear-gradient(135deg,#92400e,#fbbf24)">PM</div>Priya M.
-          </div>
-          <div class="wbm-team-chip">
-            <div class="wbm-team-chip-av" style="background:linear-gradient(135deg,#312e81,#93c5fd)">VN</div>Varun N.
-          </div>
-          <div class="wbm-team-chip">
-            <div class="wbm-team-chip-av" style="background:linear-gradient(135deg,#7c3aed,#c4b5fd)">KP</div>Kiran P.
-          </div>
-          <div class="wbm-team-chip">
-            <div class="wbm-team-chip-av" style="background:linear-gradient(135deg,#0e7490,#67e8f9)">RS</div>Rahul S.
-          </div>
-          <div class="wbm-team-chip" style="background:#f8fafc;color:#94a3b8;border-color:#e2e8f0">
-            <div class="wbm-team-chip-av" style="background:#e2e8f0;color:#94a3b8">+9</div>more on the team
-          </div>
+      <div class="prf-trust-item">
+        <div class="prf-trust-ico">⏱</div>
+        <div>
+          <div class="prf-trust-val">Avg 8.4 weeks</div>
+          <div class="prf-trust-lbl">Actual go-live time</div>
         </div>
-        <a href="#" class="wbm-card-f-cta">
-          Meet everyone
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
-        </a>
       </div>
-
+      <div class="prf-trust-item">
+        <div class="prf-trust-ico">📋</div>
+        <div>
+          <div class="prf-trust-val">100% scope-fit</div>
+          <div class="prf-trust-lbl">No scope creep, ever</div>
+        </div>
+      </div>
+      <div class="prf-trust-item">
+        <div class="prf-trust-ico">🔁</div>
+        <div>
+          <div class="prf-trust-val">78% referrals</div>
+          <div class="prf-trust-lbl">New clients from existing ones</div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
+
+
 <section class="wif-section">
   <div class="wif-atm"></div>
   <div class="wif-grid-bg"></div>
@@ -4306,6 +5097,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var section = document.getElementById('wvh-vid');
   if (section) observer.observe(section);
+});
+document.addEventListener('DOMContentLoaded', function () {
+
+
+  var track = document.getElementById('prfLogoTrack');
+  if (track) {
+    /* duplicate for seamless loop */
+    [1,2].forEach(function () {
+      LOGOS.forEach(function (l) {
+        var el = document.createElement('div');
+        el.className = 'prf-logo';
+        el.innerHTML =
+          '<div class="prf-logo-icon">' + l.icon + '</div>' +
+          '<div>' +
+            '<div class="prf-logo-name">' + l.name + '</div>' +
+            '<div class="prf-logo-ind">' + l.ind + '</div>' +
+          '</div>';
+        track.appendChild(el);
+      });
+    });
+  }
+
+  /* ── filter tabs (visual only) ── */
+  var tabs = document.querySelectorAll('#wvh-proof .prf-tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+
+  var cards    = document.querySelectorAll('#wvh-pain .pain-prob-card');
+  var activeTxt = document.getElementById('painActiveTxt');
+
+  var PROBLEMS = [
+    'No fixed timeline — projects drag for months',
+    'Scope keeps expanding — invoice keeps growing',
+    'Custom code written — then no one maintains it',
+    'Training is a 2-hour demo — team is lost',
+    'Go-live day is chaos — then they disappear'
+  ];
+
+  function openCard(idx) {
+    cards.forEach(function (c, i) {
+      c.classList.toggle('active', i === idx);
+    });
+    if (activeTxt) activeTxt.textContent = PROBLEMS[idx];
+  }
+
+  cards.forEach(function (card, idx) {
+    card.querySelector('.pain-prob-head').addEventListener('click', function () {
+      var isOpen = card.classList.contains('active');
+      openCard(isOpen ? -1 : idx);
+      if (activeTxt && isOpen) activeTxt.textContent = '—';
+    });
+  });
+
+  /* toggle switch */
+  var toggleBtns = document.querySelectorAll('#wvh-pain .pain-toggle-btn');
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      toggleBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  /* init */
+  openCard(0);
 });
 </script>
 </body>
